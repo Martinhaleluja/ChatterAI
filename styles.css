@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); /* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Dune+Rise&display=swap'); /* Import Dune Rise font */
+
+* {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    box-sizing: border-box; /* Set box model */
+    font-family: "Poppins", sans-serif; /* Default font for the body */
+}
+
+body {
+    background: #0A9FBC; /* Light cane blue background */
+    margin: 0; /* No margin for the body */
+}
+
+.ChatterAI-toggler {
+    position: fixed; /* Fixed position for toggler */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center */
+    height: 100px; /* Height of the button */
+    width: 100px; /* Width of the button */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack icons vertically */
+    align-items: center; /* Center icons */
+    justify-content: center; /* Center icons */
+    color: #fff; /* White text color */
+    background: #6992a5; /* Button background color */
+    border-radius: 50%; /* Round button */
+    z-index: 9999; /* Ensure it is on top */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+.ChatterAI-toggler:hover {
+    background: #007bff; /* Change color on hover */
+}
+
+.ChatterAI {
+    position: fixed; /* Fixed position for the chatbot */
+    right: 0; /* Align to the right */
+    top: 0; /* Align to the top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Prevent interaction */
+    background: #bae9ff; /* Background color for the chatbot */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.show-ChatterAI .ChatterAI {
+    opacity: 1; /* Show chatbot when class is added */
+    pointer-events: auto; /* Enable interaction */
+}
+
+.ChatterAI header {
+    background: #00ddff; /* Header background color */
+    padding: 16px 0; /* Vertical padding */
+    text-align: left; /* Align text to the left */
+    position: relative; /* For absolute positioning of close button */
+}
+
+.ChatterAI header h2 {
+    color: #fff; /* White text color for the header */
+    font-size: 1.4rem; /* Font size for the header */
+    text-align: center; /* Center header text */
+    font-family: 'Dune Rise', sans-serif; /* Set header font to Dune Rise */
+}
+
+.ChatterAI .chatbox {
+    height: calc(100% - 160px); /* Adjust height for the input area */
+    max-height: calc(100% - 160px); /* Maximum height */
+    overflow-y: auto; /* Scrollable chatbox */
+    padding: 15px 20px; /* Padding for chatbox */
+}
+
+.chat {
+    display: flex; /* Flexbox for message layout */
+}
+
+.chat.incoming span {
+    height: 32px; /* Height of the icon */
+    width: 32px; /* Width of the icon */
+    color: #000; /* Icon color */
+    background: #724ae8; /* Background for incoming message icon */
+    text-align: center; /* Center icon text */
+    line-height: 32px; /* Center icon vertically */
+    border-radius: 4px; /* Rounded corners for icon */
+    margin: 0 10px 7px 0; /* Margin for spacing */
+}
+
+.chat.outgoing {
+    justify-content: flex-end; /* Align outgoing messages to the right */
+}
+
+.chat p {
+    color: #ffffff; /* White text for messages */
+    max-width: 100%; /* Limit message width */
+    padding: 12px 16px; /* Padding for messages */
+    border-radius: 10px 10px 0 10px; /* Rounded corners for messages */
+    background: #1a3b53; /* Background color for outgoing messages */
+}
+
+.ChatterAI .incoming p {
+    color: #000; /* Black text for incoming messages */
+    background: #03d3f8; /* Background for incoming messages */
+    border-radius: 10px 10px 10px 0; /* Rounded corners */
+}
+
+.chat-input {
+    position: absolute; /* Absolute position for input area */
+    bottom: 0; /* Align to the bottom */
+    width: 100%; /* Full width */
+    display: flex; /* Flexbox for alignment */
+    gap: 20px; /* Space between elements */
+    background: #00b7ff; /* Background color for input area */
+    padding: 5px 20px; /* Padding for input area */
+    border-top: 5px solid #ccc; /* Top border for input area */
+}
+
+.chat-input textarea {
+    border: none; /* No border for textarea */
+    width: 100%; /* Full width */
+    outline: none; /* No outline */
+    resize: none; /* Disable resizing */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Padding inside the textarea */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.loader {
+    border: 4px solid #f3f3f3; /* Light grey for loader */
+    border-top: 4px solid #39e1ff; /* Blue for loader */
+    border-radius: 50%; /* Round loader */
+    width: 24px; /* Width of loader */
+    height: 24px; /* Height of loader */
+    animation: spin 1s linear infinite; /* Spinning animation */
+    margin-right: 10px; /* Right margin */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); } /* Starting rotation */
+    100% { transform: rotate(360deg); } /* Full rotation */
+}

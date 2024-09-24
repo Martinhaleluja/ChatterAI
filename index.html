@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ChatterAI</title>
+    <link rel="stylesheet" href="static/styles.css"> <!-- Link to external CSS for styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+
+    <!-- Google Poppins font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <!-- Google Dune Rise font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dune+Rise&display=swap">
+
+    <!-- Material Icons for UI elements -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        /* Apply Dune Rise font to the header */
+        h2 {
+            font-family: 'Dune Rise', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button to toggle chatbot visibility -->
+    <button class="ChatterAI-toggler">
+        <span class="material-icons">search</span>
+    </button>
+
+    <!-- Chatbot container -->
+    <div class="ChatterAI">
+        <header>
+            <h2>ChatterAI</h2> <!-- Header in Dune Rise font -->
+            <span class="material-icons">close</span> <!-- Close button for the chatbot -->
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming"> <!-- Initial greeting from the bot -->
+                <span class="material-icons">chat</span>
+                <p>Hi there, how can I help you today?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Ask me anything..." required></textarea> <!-- Text area for user input -->
+            <span id="send-btn" class="material-icons">send</span> <!-- Button to send message -->
+        </div>
+    </div>
+</body>
+<script src="static/scripts.js"></script> <!-- Link to external JavaScript file -->
+</html>
